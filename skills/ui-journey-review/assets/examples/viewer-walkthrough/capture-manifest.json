@@ -1,0 +1,23 @@
+{
+  "description": "Source fingerprint for the actual viewer screenshot captures. Compute SHA-256 over the concatenated raw bytes of inputs in the listed order, without separators. Paths are relative to the skill directory.",
+  "inputs": [
+    {
+      "path": "scripts/build.py",
+      "sha256": "e202c79c4ea5a59da6b5029e2a89c375d81cb46d5b712340a8f737f672f13b04"
+    },
+    {
+      "path": "scripts/journey.js",
+      "sha256": "5c48465f2c57d53010f03a422559f48de33e0e012d50192caeb0b81a80722c64"
+    },
+    {
+      "path": "scripts/journey.css",
+      "sha256": "bdc66cb7ca2a0d3c8ad1a51e2ccd19558c05e4b1311f2b60283ca9a3f641c024"
+    },
+    {
+      "path": "assets/examples/flow-outline/journey.json",
+      "sha256": "cb3079f79a43060c84422febaa6384b09fffa428ebb165ad60ad209e95b652bd"
+    }
+  ],
+  "sourceRevision": "sha256:34aa8cdda0b679b55eca6f317db24d4f0581935f9505875e95ffa2f7d0516e0e",
+  "scope": "Viewer rendering of an illustrative flow only; not evidence of a real library product."
+}

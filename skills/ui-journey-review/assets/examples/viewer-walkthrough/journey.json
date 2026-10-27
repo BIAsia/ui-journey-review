@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "id": "viewer-walkthrough",
+  "title": "Review a journey",
+  "subtitle": "Viewer walkthrough \u00b7 Fixture",
+  "screens": {
+    "outline": {
+      "title": "Flow overview",
+      "variants": {
+        "light": {
+          "src": "assets/outline-light.png",
+          "width": 1200,
+          "height": 760,
+          "sha256": "d9671b6db968890690fa164c830dc61eb4d64f103a0562201c90d3f1a85b5230",
+          "provenance": {
+            "sourceRevision": "sha256:34aa8cdda0b679b55eca6f317db24d4f0581935f9505875e95ffa2f7d0516e0e",
+            "device": "Desktop browser, 1200 x 760 CSS pixels",
+            "runtime": "Chrome via Playwriter local extension",
+            "locale": "en",
+            "captureDate": "2026-10-27T10:23:45+08:00",
+            "fixture": true,
+            "theme": "light",
+            "capture": "Actual viewer capture of the bundled illustrative flow; not a product acceptance result"
+          }
+        },
+        "dark": {
+          "src": "assets/outline-dark.png",
+          "width": 1200,
+          "height": 760,
+          "sha256": "dd4d068af6f3d97efb4ec2f6b8257f9016ef7728527b372802f51387446f4acc",
+          "provenance": {
+            "sourceRevision": "sha256:34aa8cdda0b679b55eca6f317db24d4f0581935f9505875e95ffa2f7d0516e0e",
+            "device": "Desktop browser, 1200 x 760 CSS pixels",
+            "runtime": "Chrome via Playwriter local extension",
+            "locale": "en",
+            "captureDate": "2026-10-27T10:23:45+08:00",
+            "fixture": true,
+            "theme": "dark",
+            "capture": "Actual viewer capture of the bundled illustrative flow; not a product acceptance result"
+          }
+        }
+      }
+    },
+    "zoom": {
+      "title": "Zoom in",
+      "variants": {
+        "light": {
+          "src": "assets/zoom-light.png",
+          "width": 1200,
+          "height": 760,
+          "sha256": "19e68c5abbbe4a3a9aac7655c1c6a05bbeb04fde00029bdcaaec00a8abcdd4c8",
+          "provenance": {
+            "sourceRevision": "sha256:34aa8cdda0b679b55eca6f317db24d4f0581935f9505875e95ffa2f7d0516e0e",
+            "device": "Desktop browser, 1200 x 760 CSS pixels",
+            "runtime": "Chrome via Playwriter local extension",
+            "locale": "en",
+            "captureDate": "2026-10-27T10:23:45+08:00",
+            "fixture": true,
+            "theme": "light",
+            "capture": "Actual viewer capture of the bundled illustrative flow; not a product acceptance result"
+          }
+        },
+        "dark": {
+          "src": "assets/zoom-dark.png",
+          "width": 1200,
+          "height": 760,
+          "sha256": "78a827632a281b115735cf5a2ae09269094ac41ab674f20f648d10e95a1b36b1",
+          "provenance": {
+            "sourceRevision": "sha256:34aa8cdda0b679b55eca6f317db24d4f0581935f9505875e95ffa2f7d0516e0e",
+            "device": "Desktop browser, 1200 x 760 CSS pixels",
+            "runtime": "Chrome via Playwriter local extension",
+            "locale": "en",
+            "captureDate": "2026-10-27T10:23:45+08:00",
+            "fixture": true,
+            "theme": "dark",
+            "capture": "Actual viewer capture of the bundled illustrative flow; not a product acceptance result"
+          }
+        }
+      }
+    }
+  },
+  "graph": {
+    "width": 1170,
+    "height": 520,
+    "nodes": [
+      {
+        "id": "overview",
+        "kind": "screen",
+        "screen": "outline",
+        "title": "Open the journey",
+        "state": "Fit the flow on one canvas",
+        "x": 60,
+        "y": 80,
+        "width": 440
+      },
+      {
+        "id": "zoomed",
+        "kind": "screen",
+        "screen": "zoom",
+        "title": "Inspect the flow",
+        "state": "Zoom in to read the details",
+        "x": 650,
+        "y": 80,
+        "width": 440
+      }
+    ],
+    "edges": [
+      {
+        "from": "overview",
+        "to": "zoomed",
+        "points": [
+          [
+            510,
+            275
+          ],
+          [
+            640,
+            275
+          ]
+        ],
+        "label": "Zoom in",
+        "labelAt": [
+          575,
+          250
+        ]
+      }
+    ]
+  },
+  "branches": [
+    {
+      "id": "reset",
+      "from": "zoomed",
+      "title": "Reset zoom",
+      "action": "Explore reset zoom",
+      "bounds": {
+        "x": 580,
+        "y": 60,
+        "width": 1220,
+        "height": 470
+      },
+      "nodes": [
+        {
+          "id": "reset-result",
+          "kind": "screen",
+          "screen": "outline",
+          "title": "Return to the overview",
+          "state": "100% matches the initial fit at this viewport",
+          "x": 1270,
+          "y": 80,
+          "width": 440
+        }
+      ],
+      "edges": [
+        {
+          "from": "zoomed",
+          "to": "reset-result",
+          "points": [
+            [
+              1100,
+              275
+            ],
+            [
+              1260,
+              275
+            ]
+          ],
+          "label": "Reset to 100%",
+          "labelAt": [
+            1180,
+            250
+          ]
+        }
+      ]
+    }
+  ],
+  "nodeAliases": {
+    "start": "overview"
+  }
+}

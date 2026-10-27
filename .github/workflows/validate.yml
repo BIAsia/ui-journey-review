@@ -1,0 +1,16 @@
+name: Validate skill and viewer
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify portable exports and invalid-input rejection
+        working-directory: skills/ui-journey-review/scripts
+        run: python3 -m unittest -v test_build.py
+      - name: Build both examples
+        run: |
+          python3 skills/ui-journey-review/scripts/build.py skills/ui-journey-review/assets/examples/flow-outline/journey.json --output dist/outline
+          python3 skills/ui-journey-review/scripts/build.py skills/ui-journey-review/assets/examples/viewer-walkthrough/journey.json --output dist/walkthrough

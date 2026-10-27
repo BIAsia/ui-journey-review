@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Journey Review"
+  short_description: "Review implemented UI as a screenshot-based user flow"
+  default_prompt: "Use $ui-journey-review to show this feature as an interactive user flow with real screenshots, branches, errors, and recovery paths."

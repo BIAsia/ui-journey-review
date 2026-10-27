@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "id": "flow-outline",
+  "title": "Library loading",
+  "subtitle": "Illustrative flow \u00b7 No product captures",
+  "screens": {},
+  "graph": {
+    "width": 900,
+    "height": 500,
+    "nodes": [
+      {
+        "id": "start",
+        "kind": "text",
+        "title": "Open the library",
+        "state": "Illustrative flow",
+        "x": 60,
+        "y": 170,
+        "width": 170
+      },
+      {
+        "id": "load",
+        "kind": "decision",
+        "title": "Loaded?",
+        "x": 330,
+        "y": 165,
+        "width": 160
+      },
+      {
+        "id": "ready",
+        "kind": "text",
+        "title": "Browse items",
+        "state": "Success",
+        "x": 610,
+        "y": 80,
+        "width": 180
+      },
+      {
+        "id": "failed",
+        "kind": "text",
+        "title": "Show load error",
+        "state": "Keep Retry available",
+        "x": 610,
+        "y": 300,
+        "width": 180
+      }
+    ],
+    "edges": [
+      {
+        "from": "start",
+        "to": "load",
+        "points": [
+          [
+            240,
+            203
+          ],
+          [
+            320,
+            203
+          ]
+        ],
+        "label": "Open",
+        "labelAt": [
+          280,
+          183
+        ]
+      },
+      {
+        "from": "load",
+        "to": "ready",
+        "points": [
+          [
+            490,
+            203
+          ],
+          [
+            540,
+            203
+          ],
+          [
+            540,
+            110
+          ],
+          [
+            600,
+            110
+          ]
+        ],
+        "label": "Success",
+        "labelAt": [
+          544,
+          88
+        ]
+      },
+      {
+        "from": "load",
+        "to": "failed",
+        "points": [
+          [
+            490,
+            203
+          ],
+          [
+            540,
+            203
+          ],
+          [
+            540,
+            330
+          ],
+          [
+            600,
+            330
+          ]
+        ],
+        "label": "Failure",
+        "labelAt": [
+          544,
+          355
+        ],
+        "tone": "error"
+      },
+      {
+        "from": "failed",
+        "to": "load",
+        "points": [
+          [
+            700,
+            370
+          ],
+          [
+            700,
+            435
+          ],
+          [
+            410,
+            435
+          ],
+          [
+            410,
+            251
+          ]
+        ],
+        "label": "Retry",
+        "labelAt": [
+          470,
+          435
+        ]
+      }
+    ]
+  }
+}
